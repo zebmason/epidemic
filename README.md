@@ -1,11 +1,23 @@
-# Epidemic
+# Derivation of deterministic epidemic models from a discrete stochastic process
 
-## Introduction
+The enclosed code and data accompany a paper submitted to the Springer Journal
+of Mathematical Biology.
 
-Source code to accompany my epidemiology paper when it is published.
+## Simulating epidemics
 
-## Requirements
+Launch Microsoft Visual Studio, build and run the two executables to create
+`.csv` files containing the simulation results in the directories `SIStudy`
+and `SIRStudy` corresponding to SI and SIR models respectively.
 
-* Visual Studio 2019 for the simulation
-* Anaconda Python for the results processing
+## Data analysis (SI)
 
+Individual Jupyter notebooks pre-exist for each `.csv` file.
+
+## Data analysis (SIR)
+
+In the `SIRStudy` directory run the Python script `notebooks.py` to create
+individual Jupyter notebooks for each `.csv` file. The pre-existing Jupyter
+notebooks there split off the correlations for each of the three denominators
+* aS + bI + cR
+* aS + b(I + R)
+* aS + bR

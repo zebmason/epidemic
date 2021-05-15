@@ -1,0 +1,17 @@
+/.vs
+/*/obj
+/*/bin
+/*.user
+launchSettings.json
+/*.bat
+/SIStudy/*.csv
+/SISStudy/*.csv
+/SIRStudy/*.csv
+__pycache__
+.ipynb_checkpoints
+/writeup/writeup.html
+/SISStudy/SI*.ipynb
+/SIRStudy/SI*.ipynb
+/writeup/main.log
+/writeup/main.pdf
+/writeup/main.synctex.gz
