@@ -1,7 +1,6 @@
 # Derivation of deterministic epidemic models from a discrete stochastic process
 
-The enclosed code and data accompany a paper submitted to the Springer Journal
-of Mathematical Biology.
+The enclosed code and data accompany a paper submitted to various journals.
 
 ## Simulating epidemics
 
