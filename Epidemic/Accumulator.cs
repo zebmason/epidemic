@@ -101,6 +101,7 @@ namespace Epidemic
             var sir = new SIR();
             for (int i = 0; i < repeats; ++i)
             {
+                Console.WriteLine($"Iteration {i}");
                 var susceptible = new List<int>();
                 var infected = new List<int>();
                 var resolved = new List<int>();

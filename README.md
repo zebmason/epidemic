@@ -20,3 +20,8 @@ notebooks there split off the correlations for each of the three denominators
 * aS + bI + cR
 * aS + b(I + R)
 * aS + bR
+
+## Data analysis (Tag)
+
+A cut down version of the SIR study for the game of epidemiological tag on
+[substack](https://https://zebm.substack.com/p/epidemiological-tag/).

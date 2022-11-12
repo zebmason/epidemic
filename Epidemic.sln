@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31019.35
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epidemic", "Epidemic\Epidemic.csproj", "{561FB2E5-DBDA-4403-9672-44C6A63AD3D2}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIStudy", "SIStudy\SIStudy.csproj", "{3B495481-1D44-4648-9667-C06FE3A7F39F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIRStudy", "SIRStudy\SIRStudy.csproj", "{8E0F9ADC-E224-4B63-8BAE-6DA3D56E42CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tag", "Tag\Tag.csproj", "{B4AD4F05-7549-48A0-904C-49EAD20656F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8E0F9ADC-E224-4B63-8BAE-6DA3D56E42CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E0F9ADC-E224-4B63-8BAE-6DA3D56E42CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E0F9ADC-E224-4B63-8BAE-6DA3D56E42CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4AD4F05-7549-48A0-904C-49EAD20656F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4AD4F05-7549-48A0-904C-49EAD20656F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4AD4F05-7549-48A0-904C-49EAD20656F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4AD4F05-7549-48A0-904C-49EAD20656F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

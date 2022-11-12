@@ -1,0 +1,10 @@
+# Complete graph of size 31 discarding 100%
+# susceptible, infected, resolved
+30,1,0
+28,2,1
+24,4,3
+18,6,7
+11,7,13
+7,4,20
+4,3,24
+4,0,27
