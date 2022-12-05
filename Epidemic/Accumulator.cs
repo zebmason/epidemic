@@ -96,7 +96,7 @@ namespace Epidemic
             }
         }
 
-        public static SIR Study(Paths paths, ProtoState state, ISeeder seeder, int repeats, int maxIterations = 10000)
+        public static SIR Study(Paths paths, ProtoState state, ISeeder seeder, int repeats, IDGMLWriter dgml, int maxIterations = 10000)
         {
             var sir = new SIR();
             for (int i = 0; i < repeats; ++i)
@@ -105,7 +105,7 @@ namespace Epidemic
                 var susceptible = new List<int>();
                 var infected = new List<int>();
                 var resolved = new List<int>();
-                state.March(paths, seeder, susceptible, infected, resolved, maxIterations);
+                state.March(paths, seeder, susceptible, infected, resolved, maxIterations, dgml);
                 sir.Add(susceptible, infected, resolved);
             }
 

@@ -12,7 +12,8 @@ namespace SIRStudy
             var paths = new Paths(new Complete(random, population));
             var state = new State(population, true, discard);
 
-            var sir = SIR.Study(paths, state, new FirstOne(), 100);
+            var dgml = new DGMLGhostWriter();
+            var sir = SIR.Study(paths, state, new FirstOne(), 100, dgml);
             sir.Save(filePath, $"# Complete graph of size {population} discarding {100 * discard}%");
         }
 

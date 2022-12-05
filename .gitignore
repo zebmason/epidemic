@@ -15,3 +15,5 @@ __pycache__
 /writeup/main.log
 /writeup/main.pdf
 /writeup/main.synctex.gz
+/Tag/*.dgml
+/Tag/*.png

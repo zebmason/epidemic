@@ -50,7 +50,7 @@ namespace Epidemic
 
         abstract protected int Discard(List<int> next);
 
-        private int Increment(Paths paths)
+        private int Increment(Paths paths, IDGMLWriter dgml)
         {
             ++_generation;
 
@@ -60,24 +60,36 @@ namespace Epidemic
                 var (n, m) = paths.Neighbours(node);
                 Increment(n, next);
                 Increment(m, next);
+                dgml.AddEdge(node, n);
+                dgml.AddEdge(node, m);
             }
 
             return Discard(next);
         }
 
-        public void March(Paths paths, ISeeder seeder, List<int> susceptible, List<int> infected, List<int> resolved, int max_iterations)
+        private void Generation(IDGMLWriter dgml)
+        {
+            foreach (var node in _current)
+            {
+                dgml.AddNode(node, _generation);
+            }
+        }
+
+        public void March(Paths paths, ISeeder seeder, List<int> susceptible, List<int> infected, List<int> resolved, int max_iterations, IDGMLWriter dgml)
         {
             Clear();
             seeder.Seed(this);
             susceptible.Add(_generations.Count - _current.Count);
             infected.Add(_current.Count);
             resolved.Add(0);
+            Generation(dgml);
 
             var population = _generations.Count;
             for (int i = 0; i < max_iterations; ++i)
             {
                 paths.Generate();
-                var discarded = Increment(paths);
+                var discarded = Increment(paths, dgml);
+                Generation(dgml);
                 if (discarded == 0 && _current.Count == infected[^1])
                 {
                     if (_current.Count > 0 && resolved[^1] != 0)
@@ -94,6 +106,18 @@ namespace Epidemic
                 infected.Add(_current.Count);
                 susceptible.Add(population - resolved[^1] - infected[^1]);
             }
+
+            _current.Clear();
+            for (int i = 0; i < _generations.Count; ++i)
+            {
+                if (_generations[i] == 0)
+                {
+                    _current.Add(i);
+                }
+            }
+
+            _generation = 0;
+            Generation(dgml);
         }
 
         protected void MarkDiscarded(int discarded)

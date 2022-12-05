@@ -12,7 +12,8 @@ namespace SIStudy
             var paths = new Paths(new Complete(random, population));
             var state = new State(population, false, 0.0f);
 
-            var sir = SIR.Study(paths, state, seeder, 100);
+            var dgml = new DGMLGhostWriter();
+            var sir = SIR.Study(paths, state, seeder, 100, dgml);
             sir.Save(filePath, $"# Complete graph of size {population} with seeding {seeder.Description}");
         }
 

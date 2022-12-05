@@ -5,6 +5,16 @@ namespace Tag
 {
     class Program
     {
+        static IDGMLWriter Dgml(int repeats)
+        {
+            if (repeats == 1)
+            {
+                return new DGMLWriter();
+            }
+
+            return new DGMLGhostWriter();
+        }
+
         static void Complete(string filePath, float discard, int repeats, int seed, int population)
         {
             var random = new Random(seed);
@@ -12,8 +22,12 @@ namespace Tag
             var state = new State(population, true, discard);
 
             System.Console.WriteLine($"Test {filePath}");
-            var sir = SIR.Study(paths, state, new FirstOne(), repeats);
+            var dgml = Dgml(repeats);
+            var sir = SIR.Study(paths, state, new FirstOne(), repeats, dgml);
             sir.Save(filePath, $"# Complete graph of size {population} discarding {100 * discard}%");
+
+            filePath = filePath.Replace(".csv", ".dgml");
+            dgml.Save(filePath);
         }
 
         static void Main(string[] args)
